@@ -1,18 +1,20 @@
-package com.popcivilar.code;
+package com.popcivilar.code.map;
 
 /**
  * 手写HashMap
  */
-public class FakeHashMap<K,V> {
+public class FakedHashMap<K,V> {
 
     private volatile Entry<K,V>[] table;
+
+    private volatile int count;//个数
 
     private volatile int entrySize; // 数组长度
 
     private static volatile int initSize = 16;
 
 
-    public FakeHashMap() {
+    public FakedHashMap() {
         this.table = new Entry[initSize];
         this.entrySize = table.length;
     }
@@ -55,6 +57,7 @@ public class FakeHashMap<K,V> {
                     if(p.key.hashCode() == hash && p.key.equals(k)){
                        oldVal = p.val;
                        p.val = v;
+                       count++;
                        return oldVal;
                     }
                     tail = p;
@@ -77,7 +80,7 @@ public class FakeHashMap<K,V> {
             oldVal = v;
         }
         //todo 考虑扩容
-
+        count++;
         return oldVal;
     }
 
@@ -92,17 +95,8 @@ public class FakeHashMap<K,V> {
 
 
     int size(){
-       int size = 0;
-       for(int i = 0;i<table.length;i++){
-           if(table[i] != null){
-               for(Node<K,V> node = table[i].node;node!=null;node = node.next){
-                   size++;
-               }
-           }
-       }
-       return size;
+       return count;
     }
-
 
     public V get(K k){
         if(k == null){

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd"
+       >
+    <!--<bean name="shopService" class="com.popcivilar.code.spring.ioc.ShopService">
+        &lt;!&ndash; 此种方式一定要写setter方法 &ndash;&gt;
+        <property name="goodsService" ref="goodsService" />
+    </bean>-->
+
+    <bean name="goodsService1" class="com.popcivilar.code.spring.ioc.GoodsServiceImpl1" lazy-init="true"/>
+
+<!--    <bean name="goodsService2" class="com.popcivilar.code.spring.ioc.GoodsServiceImpl2" />-->
+
+    <bean name="shopService" class="com.popcivilar.code.spring.ioc.ShopService"
+          init-method="init" destroy-method="destroy">
+    </bean>
+
+
+
+
+</beans>
