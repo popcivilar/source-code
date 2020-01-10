@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans auto-wired="type">
+
+    <bean id="shopService" class="com.popcivilar.code.spring.ioc.ShopService">
+        <property name="goodsService" ref="goodsService" />
+        <constructor-arg name="goodsService" ref="goodsService"/>
+    </bean>
+
+
+    <bean id="goodsService" class="com.popcivilar.code.spring.ioc.GoodsServiceImpl1"></bean>
+
+
+
+</beans>

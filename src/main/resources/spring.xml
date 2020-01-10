@@ -6,12 +6,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd"
        >
-    <!--<bean name="shopService" class="com.popcivilar.code.spring.ioc.ShopService">
-        &lt;!&ndash; 此种方式一定要写setter方法 &ndash;&gt;
-        <property name="goodsService" ref="goodsService" />
-    </bean>-->
+<!--    <bean name="shopService" class="com.popcivilar.code.spring.ioc.ShopService">-->
+<!--        &lt;!&ndash; 此种方式一定要写setter方法 &ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="goodsService" ref="goodsService" />&ndash;&gt;-->
+<!--    </bean>-->
 
-    <bean name="goodsService1" class="com.popcivilar.code.spring.ioc.GoodsServiceImpl1" lazy-init="true"/>
+<!--    <bean name="goodsService1" class="com.popcivilar.code.spring.ioc.GoodsServiceImpl1" />-->
 
 <!--    <bean name="goodsService2" class="com.popcivilar.code.spring.ioc.GoodsServiceImpl2" />-->
 
